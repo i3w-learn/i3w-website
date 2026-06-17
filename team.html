@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team — The people behind I3W</title>
+<meta name="description" content="Meet the team behind Infi Companion, InfiNotes and Poshan AI — a small, senior crew from Unacademy, PhysicsWallah, Shopify, Atlassian, Zupee and NID.">
+<meta name="theme-color" content="#0d0d0d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Team — The people behind I3W">
+<meta property="og:description" content="Meet the team behind Infi Companion, InfiNotes and Poshan AI — a small, senior crew from Unacademy, PhysicsWallah, Shopify, Atlassian, Zupee and NID.">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;800&family=Montserrat:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/i3w.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+<canvas class="scene-canvas" data-scene="ambient" aria-hidden="true"></canvas>
+<div class="scene-fallback" aria-hidden="true"></div>
+<div class="scene-veil" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="I3W — home">
+      <img src="assets/img/i3w-mark.png" alt="">
+      <span>
+        <span class="brand-word">I<span class="three">3</span>W</span>
+        <span class="brand-tag">Idea · Innovation · Impact</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="research.html">Research</a>
+      <a href="team.html" class="active">Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Get in touch</a>
+      <button class="nav-burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <a href="index.html"><span class="idx">01</span>Home</a>
+  <a href="about.html"><span class="idx">02</span>About</a>
+  <a href="products.html"><span class="idx">03</span>Products</a>
+  <a href="research.html"><span class="idx">04</span>Research</a>
+  <a href="team.html" class="active"><span class="idx">05</span>Team</a>
+  <a href="careers.html"><span class="idx">06</span>Careers</a>
+  <a href="contact.html"><span class="idx">07</span>Contact</a>
+</div>
+
+<main>
+<section class="page-head"><div class="wrap stack">
+  <span class="eyebrow" data-reveal>The team</span>
+  <h1 data-reveal>The people behind <span class="ink-molten">Infi</span>.</h1>
+  <p class="lead" data-reveal>A small, senior crew building AI that reaches millions of students — close to the work, close to the user, and fast.</p>
+</div></section>
+
+<section class="section"><div class="wrap split">
+  <div class="stack">
+    <span class="eyebrow" data-reveal>Who we are</span>
+    <h2 data-reveal>Small team.<br>An <span class="txt-orange">outsized</span> swing.</h2>
+  </div>
+  <div class="stack" data-reveal>
+    <p class="lead">We're a handful of people who've built learning products at national scale — at Unacademy, PhysicsWallah, Shopify, Atlassian, Zupee and NID.</p>
+    <p>I3W runs lean on purpose. Work is single-owner, end to end: the person who designs a thing ships it and watches the numbers afterwards. We build with the frontier, listen to students daily, and judge every feature on one question — <strong>did a real student get a real win today?</strong></p>
+  </div>
+</div></section>
+
+<section class="section section--solid"><div class="wrap stack-lg">
+  <div class="stack">
+    <span class="eyebrow" data-reveal>Leadership</span>
+    <h2 data-reveal>Who steers the work.</h2>
+  </div>
+  <div class="grid grid-2" style="max-width:760px;margin-inline:auto;" data-reveal-stagger>
+    <div class="person">
+      <div class="ph"><img src="assets/img/team/akash.jpg" alt="Akash Tyagi"></div>
+      <h3>Akash Tyagi</h3><div class="role">Product Lead</div>
+      <p class="bio">Sets product direction across I3W. An IISc-trained engineer, a founding director at Unacademy and a former VP at PhysicsWallah — he's built learning products at national scale before.</p>
+    </div>
+    <div class="person">
+      <div class="ph"><img src="assets/img/team/bharat.jpg" alt="Bharat Agarwal"></div>
+      <h3>Bharat Agarwal</h3><div class="role">AI &amp; Architecture</div>
+      <p class="bio">Owns the AI layer — the model stack, Infi's persona, and the safety guardrails that keep it right for students. Studied CS at Bradfield; previously engineering at Shopify and Atlassian.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap stack-lg">
+  <div class="stack">
+    <span class="eyebrow" data-reveal>The team</span>
+    <h2 data-reveal>Who builds it.</h2>
+  </div>
+  <div class="people-center" data-reveal-stagger>
+    <div class="person">
+      <div class="ph"><span class="mono-init">AT</span></div>
+      <h3>Achal Tiwari</h3><div class="role">Product</div>
+      <p class="bio">Drives the Companion launch and InfiNotes growth — from spec to ship to the numbers afterwards. Lives in the gap between what students need and what we build.</p>
+    </div>
+    <div class="person">
+      <div class="ph"><span class="mono-init">MS</span></div>
+      <h3>Manas Singh</h3><div class="role">Backend</div>
+      <p class="bio">Builds the infrastructure, payments and real-time voice pipeline that make Infi work at scale. Previously at Zupee.</p>
+    </div>
+    <div class="person">
+      <div class="ph"><span class="mono-init">VS</span></div>
+      <h3>Vikas Sharma</h3><div class="role">Mobile</div>
+      <p class="bio">Owns the React Native app and voice UI — the chat and endpointing students actually hold in their hands.</p>
+    </div>
+    <div class="person">
+      <div class="ph"><span class="mono-init">PO</span></div>
+      <h3>Pravar Oza</h3><div class="role">Design</div>
+      <p class="bio">Shapes how Infi looks, moves and feels — from the first screen to the smallest line of microcopy. Trained at NID.</p>
+    </div>
+    <div class="person">
+      <div class="ph"><span class="mono-init">RD</span></div>
+      <h3>Rishabh Dhiman</h3><div class="role">Quality &amp; AI Eval</div>
+      <p class="bio">Owns quality and AI evaluation — the assumption tests and safety checks that decide whether a feature is ready for students.</p>
+    </div>
+    <div class="person">
+      <div class="ph"><span class="mono-init">BH</span></div>
+      <h3>Bhavya</h3><div class="role">Marketing, Social &amp; Content</div>
+      <p class="bio">Owns content, social and marketing — how Infi sounds to students online, from the brand voice to the campaigns that bring them in.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section section--solid"><div class="wrap cta-block">
+  <span class="eyebrow eyebrow--center" data-reveal>Join us</span>
+  <h2 data-reveal>Want to build with this team?</h2>
+  <p class="lead" data-reveal>We hire for restlessness and ownership. If your work belongs in real students' hands, let's talk.</p>
+  <div class="cta-actions" data-reveal>
+    <a class="btn btn-primary" href="careers.html">See open roles <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+  </div>
+</div></section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="f-brand">
+        <img src="assets/img/i3w-mark.png" alt="I3W — Idea Innovation Impact Wing">
+        <p>The AI-native venture studio inside Infinity Learn. We build intelligence that matters — for the students, families and institutions of Bharat.</p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="about.html">Our story</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="research.html">Research &amp; insights</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html">Infi Companion</a></li>
+          <li><a href="products.html">InfiNotes</a></li>
+          <li><a href="products.html">NEET Mock Tests</a></li>
+          <li><a href="products.html">Poshan AI</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:product@i3w.ai">product@i3w.ai</a></li>
+          <li><a href="careers.html">Join the wing</a></li>
+          <li><a href="contact.html">Partnerships</a></li>
+          <li><a href="contact.html">Press</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span data-year>2026</span> I3W · Idea Innovation Impact Wing · Infinity Learn</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.4 8h4.2v12H.4V8zm7.2 0h4v1.6h.06c.56-1 1.9-2 3.94-2 4.2 0 5 2.6 5 6V20h-4.2v-5.6c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V20H7.6V8z"/></svg></a>
+        <a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5-6.5L5.4 22H2.3l7.8-8.9L1.7 2h6.9l4.5 6 5.8-6zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg></a>
+        <a href="mailto:product@i3w.ai" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/js/core.js"></script>
+</body>
+</html>
