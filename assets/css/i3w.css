@@ -349,10 +349,17 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: none; 
 .field textarea { min-height: 130px; resize: vertical; }
 .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--orange); background: rgba(252,88,16,.05); }
 .field input::placeholder, .field textarea::placeholder { color: var(--muted-2); }
+.field select { -webkit-appearance: none; appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238b919d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 16px center; padding-right: 42px; }
+/* native dropdown list: dark text on white so options are legible on every OS/browser */
+.field select option { color: #16181d; background: #ffffff; }
 .field .help { font-size: .8rem; color: var(--muted); }
 .form-note { font-size: .82rem; color: var(--muted); }
 .form-ok { display:none; padding: 14px 18px; border-radius: 12px; background: rgba(110,231,168,.1); border: 1px solid rgba(110,231,168,.3); color: #9af5c4; font-size: .92rem; }
 .form-ok.show { display: block; }
+.form-err { display:none; padding: 14px 18px; border-radius: 12px; background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.32); color: #fca5a5; font-size: .92rem; }
+.form-err.show { display: block; }
 
 /* job listing — expandable JD accordion */
 .job { border-bottom: 1px solid var(--line); }

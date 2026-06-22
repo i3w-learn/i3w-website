@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact & Team — I3W</title>
-<meta name="description" content="Get in touch with I3W — for students, schools, district administrations, partnerships, press, or to join the team.">
+<title>Contact | I3W</title>
+<meta name="description" content="Get in touch with I3W: for students, parents, schools, districts, partnerships, press, or to join the team.">
 <meta name="theme-color" content="#0d0d0d">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Contact & Team — I3W">
-<meta property="og:description" content="Get in touch with I3W — for students, schools, district administrations, partnerships, press, or to join the team.">
+<meta property="og:title" content="Contact | I3W">
+<meta property="og:description" content="Get in touch with I3W: for students, parents, schools, districts, partnerships, press, or to join the team.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Primary">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="I3W — home">
+    <a class="brand" href="index.html" aria-label="I3W home">
       <img src="assets/img/i3w-mark.png" alt="">
       <span>
         <span class="brand-word">I<span class="three">3</span>W</span>
@@ -68,22 +68,23 @@
 <section class="page-head"><div class="wrap stack">
   <span class="eyebrow" data-reveal>Contact</span>
   <h1 data-reveal>Say <span class="ink-molten">hello</span>.</h1>
-  <p class="lead" data-reveal>Student, school, district, partner or future teammate — tell us why you're here and we'll reply at the email you leave.</p>
+  <p class="lead" data-reveal>Student, parent, school, district, partner or future teammate, tell us why you're here and we'll reply to the email you leave.</p>
 </div></section>
 
 <section class="section"><div class="wrap split">
-  <form data-demo class="stack" data-reveal>
-    <div class="field"><label>Full name <span class="req">*</span></label><input type="text" required placeholder="Your name"></div>
-    <div class="field"><label>Email <span class="req">*</span></label><input type="email" required placeholder="you@example.com"></div>
-    <div class="field"><label>Organisation</label><input type="text" placeholder="School, company or college (optional)"></div>
+  <form id="contactForm" class="stack" data-reveal method="POST" action="https://REPLACE-WITH-YOUR-ENDPOINT">
+    <div class="field"><label>Full name <span class="req">*</span></label><input name="name" type="text" required placeholder="Your name"></div>
+    <div class="field"><label>Email <span class="req">*</span></label><input name="email" type="email" required placeholder="you@example.com"></div>
+    <div class="field"><label>Organisation</label><input name="organisation" type="text" placeholder="School, company or college (optional)"></div>
     <div class="field"><label>I'm reaching out as</label>
-      <select>
+      <select name="reaching_out_as">
         <option>Student</option><option>Parent</option><option>School or institution</option>
         <option>District administration</option><option>Partnership</option><option>Press</option><option>Future teammate</option>
       </select>
     </div>
-    <div class="field"><label>Message <span class="req">*</span></label><textarea required placeholder="A line or two."></textarea></div>
-    <div class="form-ok">Thanks — your message is in. We'll be in touch shortly.</div>
+    <div class="field"><label>Message <span class="req">*</span></label><textarea name="message" required placeholder="A line or two."></textarea></div>
+    <div class="form-ok">Thanks, your message is in. We'll be in touch shortly.</div>
+    <div class="form-err"></div>
     <button type="submit" class="btn btn-primary">Send message <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
   </form>
 
@@ -91,13 +92,13 @@
     <div class="stack">
       <span class="eyebrow">Reach us</span>
       <h2>The shortest line in.</h2>
-      <p>Email lands with us directly — no ticket queue, no bot.</p>
+      <p>Your email lands with us directly. No ticket queue, no bot.</p>
     </div>
     <div class="rows" style="border-top:0;">
       <div class="row" style="grid-template-columns:auto 1fr;"><span class="row-n">@</span><div><h3 style="font-size:1.05rem;">Email</h3><p><a href="mailto:product@i3w.ai" class="txt-orange">product@i3w.ai</a></p></div></div>
-      <div class="row" style="grid-template-columns:auto 1fr;"><span class="row-n">·</span><div><h3 style="font-size:1.05rem;">Where we are</h3><p>Noida, India — inside Infinity Learn.</p></div></div>
+      <div class="row" style="grid-template-columns:auto 1fr;"><span class="row-n">·</span><div><h3 style="font-size:1.05rem;">Where we are</h3><p>Noida, India. Inside Infinity Learn.</p></div></div>
       <div class="row" style="grid-template-columns:auto 1fr;"><span class="row-n">·</span><div><h3 style="font-size:1.05rem;">Partnerships &amp; press</h3><p>Schools, districts and journalists welcome.</p></div></div>
-      <div class="row" style="grid-template-columns:auto 1fr;"><span class="row-n">·</span><div><h3 style="font-size:1.05rem;">Meet the team</h3><p><a href="team.html" class="txt-orange">The people behind Infi →</a></p></div></div>
+      <div class="row" style="grid-template-columns:auto 1fr;"><span class="row-n">·</span><div><h3 style="font-size:1.05rem;">Meet the team</h3><p><a href="team.html" class="txt-orange">The people behind Infi</a></p></div></div>
     </div>
   </div>
 </div></section>
@@ -108,8 +109,8 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="f-brand">
-        <img src="assets/img/i3w-mark.png" alt="I3W — Idea Innovation Impact Wing">
-        <p>The AI-native venture studio inside Infinity Learn. We build intelligence that matters — for the students, families and institutions of Bharat.</p>
+        <img src="assets/img/i3w-mark.png" alt="I3W">
+        <p>The AI studio inside Infinity Learn, building for the students, families and schools of Bharat.</p>
       </div>
       <div>
         <h4>Studio</h4>
@@ -126,7 +127,6 @@
         <ul>
           <li><a href="products.html">Infi Companion</a></li>
           <li><a href="products.html">InfiNotes</a></li>
-          <li><a href="products.html">NEET Mock Tests</a></li>
           <li><a href="products.html">Poshan AI</a></li>
         </ul>
       </div>
@@ -143,8 +143,7 @@
     <div class="footer-bottom">
       <p>© <span data-year>2026</span> I3W · Idea Innovation Impact Wing · Infinity Learn</p>
       <div class="socials">
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.4 8h4.2v12H.4V8zm7.2 0h4v1.6h.06c.56-1 1.9-2 3.94-2 4.2 0 5 2.6 5 6V20h-4.2v-5.6c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V20H7.6V8z"/></svg></a>
-        <a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5-6.5L5.4 22H2.3l7.8-8.9L1.7 2h6.9l4.5 6 5.8-6zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg></a>
+        <a href="https://www.linkedin.com/company/112491776/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.4 8h4.2v12H.4V8zm7.2 0h4v1.6h.06c.56-1 1.9-2 3.94-2 4.2 0 5 2.6 5 6V20h-4.2v-5.6c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V20H7.6V8z"/></svg></a>
         <a href="mailto:product@i3w.ai" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></a>
       </div>
     </div>

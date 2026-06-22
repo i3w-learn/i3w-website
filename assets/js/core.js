@@ -182,13 +182,26 @@ function initUI(){
     });
   }
 
-  const form = document.querySelector('form[data-demo]');
+  // Contact form: real POST to the form's action endpoint, success only on success (Q58/Q59)
+  const form = document.querySelector('#contactForm');
   if(form){
-    form.addEventListener('submit', (e)=>{
+    form.addEventListener('submit', async (e)=>{
       e.preventDefault();
-      const ok = form.querySelector('.form-ok');
-      if(ok){ ok.classList.add('show'); ok.scrollIntoView({behavior:'smooth',block:'center'}); }
-      form.reset();
+      const ok = form.querySelector('.form-ok'), err = form.querySelector('.form-err');
+      const btn = form.querySelector('button[type=submit]');
+      const action = form.getAttribute('action') || '';
+      ok && ok.classList.remove('show'); err && err.classList.remove('show');
+      const fail = (msg)=>{ if(err){ err.textContent = msg; err.classList.add('show'); err.scrollIntoView({behavior:'smooth',block:'center'}); } };
+      if(!action || /REPLACE|YOUR-ENDPOINT/i.test(action)){
+        return fail("This form isn't connected yet, please email product@i3w.ai directly.");
+      }
+      try{
+        if(btn) btn.disabled = true;
+        const res = await fetch(action, { method:'POST', body:new FormData(form), headers:{ Accept:'application/json' } });
+        if(res.ok){ if(ok){ ok.classList.add('show'); ok.scrollIntoView({behavior:'smooth',block:'center'}); } form.reset(); }
+        else { fail("Something went wrong sending that. Please email product@i3w.ai."); }
+      }catch(_){ fail("Couldn't reach the server. Please email product@i3w.ai."); }
+      finally{ if(btn) btn.disabled = false; }
     });
   }
 
@@ -211,14 +224,10 @@ function initUI(){
 function initGsap(){
   const g = window.gsap;
   const counters = document.querySelectorAll('[data-count]');
-  const finalText = el => { const dec=(el.dataset.count.split('.')[1]||'').length; el.textContent = parseFloat(el.dataset.count).toFixed(dec); };
-  if(!g || REDUCED || !window.ScrollTrigger){ counters.forEach(finalText); return; }
+  // Q3/S7: stats must always show real values, never zero. Repair any leftover "0", no count-from-zero animation.
+  counters.forEach(el=>{ if(el.textContent.trim()==='0'){ const dec=(el.dataset.count.split('.')[1]||'').length; el.textContent = parseFloat(el.dataset.count).toFixed(dec); } });
+  if(!g || REDUCED || !window.ScrollTrigger) return;
   g.registerPlugin(window.ScrollTrigger);
-  counters.forEach(el=>{
-    const end = parseFloat(el.dataset.count), dec = (el.dataset.count.split('.')[1]||'').length, obj = { v:0 };
-    window.ScrollTrigger.create({ trigger:el, start:'top 92%', once:true,
-      onEnter:()=> g.to(obj, { v:end, duration:1.6, ease:'power2.out', onUpdate:()=> { el.textContent = obj.v.toFixed(dec); } }) });
-  });
   const hero = document.querySelector('.hero .wrap');
   if(hero) g.to(hero, { yPercent:9, opacity:.55, ease:'none',
     scrollTrigger:{ trigger:'.hero', start:'top top', end:'bottom top', scrub:true } });
