@@ -337,6 +337,24 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; transform: none; 
 /* ------------------------------ Stats band ------------------------------ */
 .band { background: linear-gradient(120deg, rgba(242,100,30,.055), rgba(255,255,255,.015)); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(28px,5vw,56px); }
 
+/* phone mockup (app preview) */
+.phone { width: 100%; max-width: 286px; aspect-ratio: 434 / 938; margin-inline: auto; padding: 9px;
+  background: linear-gradient(155deg, #2b2e35, #0b0c0f); border-radius: 42px;
+  box-shadow: 0 44px 90px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.07), inset 0 0 0 1.5px rgba(255,255,255,.05);
+  position: relative; }
+.phone::before { content:""; position:absolute; z-index:3; top:50%; transform:translateY(-50%); right:-2px; width:3px; height:54px; border-radius:3px; background:#23262c; box-shadow:0 -76px 0 #23262c, 0 -134px 0 #23262c; }
+.phone .scr { width:100%; height:100%; border-radius:34px; overflow:hidden; background:#F5F1E8; position:relative; }
+.phone .scr img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.phone .scr::after { content:""; position:absolute; inset:0; border-radius:34px; box-shadow:inset 0 0 0 1px rgba(0,0,0,.18); pointer-events:none; }
+.phone-wrap { position:relative; }
+.phone-wrap::before { content:""; position:absolute; inset:-12% -6%; z-index:-1; background:radial-gradient(60% 50% at 50% 45%, rgba(242,100,30,.16), transparent 70%); filter:blur(8px); }
+/* two overlapping phones (app with two screens) */
+.phone-duo { display:flex; justify-content:center; align-items:center; padding-block:6px; }
+.phone-duo .phone { max-width:196px; }
+.phone-duo .phone.back { transform:rotate(-6deg); margin-right:-30%; z-index:1; filter:brightness(.9) saturate(.96); }
+.phone-duo .phone.front { transform:rotate(4deg); z-index:2; }
+@media (max-width:520px){ .phone-duo .phone { max-width:142px; } }
+
 /* ------------------------------ Forms ------------------------------ */
 .field { display: flex; flex-direction: column; gap: 8px; }
 .field label { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-dim); }
