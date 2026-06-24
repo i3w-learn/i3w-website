@@ -6,3 +6,6 @@ Thumbs.db
 node_modules/
 .vscode/
 .idea/
+
+# Firebase CLI deploy cache
+.firebase/
