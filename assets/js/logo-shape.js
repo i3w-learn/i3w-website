@@ -1,32 +1,33 @@
-// Platonic-ideal I3W mark — hand-reconstructed from the brand geometry, NOT a
-// scan trace. 21 clean vertices, straight diagonal strokes, three true circular
-// arcs: the two brand "sweeping curves" plus the notch's left wall (a gentle
-// outward arc fit to the real boundary, replacing a straight segment).
-// Replaces the noisy cv2 point trace so the extruded 3D mark has smooth arcs
-// and zero scan artefacts.
-//
-// Returns THREE.Shape[] (factory takes the THREE module). Coordinates are
-// centered, Y-up, longest side ~2 — same space as the old LOGO_SHAPES.
+// Platonic-ideal I3W mark — pure geometric construction, not a scan trace.
+// All strokes are either straight diagonals or true circular arcs; the top
+// and bottom edges are level planes (y = +0.468 / -0.468). Three arcs:
+//   1. notch left wall  — gentle outward curve, fit to the real boundary
+//   2. upper-left brand curve — the "sweeping" descending arc
+//   3. bottom brand curve      — the ascending arc under the W
+// Every arc endpoint is snapped to center+radius so line/arc joins are
+// seamless. Coordinates centered, Y-up, longest side ~2.
 export function buildLogoShapes(THREE){
   const s = new THREE.Shape();
-  s.moveTo(1.0000, 0.4678);
-  s.lineTo(0.4943, 0.4703);
-  // notch left wall: true arc fit to the real boundary (center left of wall,
-  // r=1.1713) — bulges gently outward into the notch. Endpoints snapped to
-  // center+radius so the right-wall line and the following segment join seamless.
-  s.lineTo(0.3106, 0.1368);
-  s.absarc(-0.8021,0.5027,1.1713,-0.3177,-0.0336,false);
-  s.lineTo(-0.1151, 0.4650);
-  s.absarc(-0.5590,0.4363,0.4448,0.0646,-1.5223,true);
-  s.lineTo(-0.5474, 0.4652);
-  s.lineTo(-1.0000, 0.4602);
-  s.lineTo(-0.9949, -0.0101);
-  s.lineTo(-0.5525, -0.0152);
-  s.lineTo(-0.5449, -0.4641);
-  s.absarc(-0.5471,0.4671,0.9312,-1.5685,-0.6719,false);
-  s.lineTo(0.0139, -0.4703);
-  s.lineTo(0.5575, -0.4703);
-  s.lineTo(0.9899, 0.4349);
-  s.closePath();
+  const T = 0.468, B = -0.468;           // level top / bottom planes
+
+  s.moveTo(1.0000, T);                   // top-right corner
+  s.lineTo(0.4943, T);                   // top edge (level)
+  // notch: right wall (straight) down to the arc start, then the left-wall arc
+  s.lineTo(0.3106, 0.1368);              // notch bottom (arc 1 start)
+  s.absarc(-0.8021, 0.5027, 1.1713, -0.3177, -0.0296, false);  // arc 1: notch left wall (outward)
+  s.lineTo(-0.1153, T);                  // top edge (level)
+  // arc 2: upper-left brand curve (descending sweep)
+  s.absarc(-0.5590, 0.4363, 0.4448, 0.0713, -1.5234, true);
+  s.lineTo(-0.5474, T);                  // back up to the level top
+  s.lineTo(-1.0000, T);                  // top-left corner (level)
+  s.lineTo(-0.9949, -0.0101);            // left edge of the I stem
+  s.lineTo(-0.5530, -0.0139);
+  s.lineTo(-0.5449, B);                  // bottom of the I stem (level)
+  // arc 3: bottom brand curve (ascending under the W), re-fit to reach y=B
+  s.absarc(-0.5764, 0.5063, 0.9748, -1.5385, -0.6545, false);
+  s.lineTo(0.0126, B);                   // bottom edge (level)
+  s.lineTo(0.5530, B);                   // bottom edge (level)
+  s.lineTo(0.9899, 0.4349);              // W right leg inner top
+  s.closePath();                         // closes to moveTo(1.0000, T)
   return [s];
 }
