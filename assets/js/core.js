@@ -10,20 +10,18 @@ import { EffectComposer }  from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass }      from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { LOGO_SHAPES }     from './logo-shape.js';
+import { buildLogoShapes }  from './logo-shape.js';
 
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const COARSE  = window.matchMedia('(pointer: coarse)').matches;
 
 /* ---- build extruded geometry from the traced logo silhouette ---- */
 function buildLogoGeometry(depth){
-  const shapes = LOGO_SHAPES.map(s=>{
-    const sh = new THREE.Shape(s.outer.map(p=> new THREE.Vector2(p[0], p[1])));
-    (s.holes||[]).forEach(h=> sh.holes.push(new THREE.Path(h.map(p=> new THREE.Vector2(p[0], p[1])))));
-    return sh;
-  });
+  // Platonic-ideal mark: real circular arcs (not a polygon trace) → needs real
+  // curve tessellation so the sweeping curves are smooth, not faceted.
+  const shapes = buildLogoShapes(THREE);
   const geo = new THREE.ExtrudeGeometry(shapes, {
-    depth, bevelEnabled:true, bevelThickness:0.04, bevelSize:0.03, bevelSegments:3, steps:1, curveSegments:6
+    depth, bevelEnabled:true, bevelThickness:0.04, bevelSize:0.03, bevelSegments:4, steps:1, curveSegments:64
   });
   geo.center();
   geo.computeVertexNormals();
