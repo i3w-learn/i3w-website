@@ -26,8 +26,7 @@ export function buildLogoShapes(THREE){
   // arc 3: bottom brand curve (ascending under the W), re-fit to reach y=B
   s.absarc(-0.5764, 0.5063, 0.9748, -1.5385, -0.6545, false);
   s.lineTo(0.0126, B);                   // bottom edge (level)
-  s.lineTo(0.5530, B);                   // bottom edge (level)
-  s.lineTo(0.9899, 0.4349);              // W right leg inner top
-  s.closePath();                         // closes to moveTo(1.0000, T)
+  s.lineTo(0.5530, B);                   // bottom edge (level) / W right leg foot
+  s.closePath();                         // W right leg: one clean diagonal to (1.0000, T)
   return [s];
 }
